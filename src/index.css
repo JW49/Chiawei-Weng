@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-dark: #1a1a1a;
+  --color-secondary-dark: #2a2a2a;
+  --color-accent-gold: #D4A574;
+  --color-accent-orange: #E67E22;
+  --color-text-light: #f5f5f5;
+  --color-text-gray: #b0b0b0;
+  
+  --font-sans: "Noto Sans TC", "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-primary-dark text-text-light font-sans overflow-x-hidden scroll-smooth relative;
+  }
+
+  body::before {
+    content: "";
+    @apply fixed inset-0 z-[-1] opacity-[0.03] pointer-events-none;
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+  }
+}
+
+@layer components {
+  .nav-bar {
+    @apply fixed top-0 left-0 right-0 bg-primary-dark/80 backdrop-blur-xl z-50 border-b border-accent-gold/10 transition-all duration-500;
+  }
+  
+  .nav-bar.scrolled {
+    @apply py-3 bg-primary-dark/95 border-accent-gold/20 shadow-[0_10px_30px_rgba(0,0,0,0.5)];
+  }
+
+  .video-wrapper {
+    @apply relative pb-[177.78%] h-0 overflow-hidden bg-black;
+  }
+
+  /* Horizontal video wrapper for standard 16:9 */
+  .video-wrapper-16-9 {
+    @apply relative pb-[56.25%] h-0 overflow-hidden bg-black;
+  }
+
+  .video-wrapper iframe, .video-wrapper-16-9 iframe {
+    @apply absolute top-0 left-0 w-full h-full border-none;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-6xl font-black mb-16 text-center text-accent-gold relative pb-6 tracking-tight;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-linear-to-r from-transparent via-accent-gold to-transparent rounded-full;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4A574;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E67E22;
+}
