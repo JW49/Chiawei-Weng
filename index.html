@@ -13,8 +13,7 @@
         .gold-border { border-color: rgba(212, 165, 116, 0.3); }
         .video-container { position: relative; padding-bottom: 177.78%; height: 0; overflow: hidden; border-radius: 1rem; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        /* 圖片統一外框樣式 */
-        .gallery-img { aspect-ratio: 4/3; object-fit: cover; border-radius: 0.75rem; border: 2px solid rgba(212, 165, 116, 0.2); transition: 0.3s; width: 100%; }
+        .gallery-img { aspect-ratio: 4/3; object-fit: cover; border-radius: 0.75rem; border: 2px solid rgba(212, 165, 116, 0.2); transition: 0.3s; width: 100%; display: block; }
         .gallery-img:hover { transform: scale(1.03); border-color: var(--accent-gold); }
     </style>
 </head>
@@ -32,7 +31,7 @@
     </nav>
 
     <section id="home" class="min-h-screen flex flex-col justify-center items-center pt-32 pb-16 px-6 bg-gradient-to-br from-[#1a1a1a] to-[#000]">
-        <div class="text-center max-w-5xl">
+        <div class="text-center max-w-5xl w-full">
             <h1 class="text-4xl md:text-6xl font-black mb-4 bg-gradient-to-r from-[#D4A574] to-[#E67E22] bg-clip-text text-transparent">
                 光宙數位創意有限公司
             </h1>
@@ -54,26 +53,28 @@
             
             <div class="bg-[#111] p-8 rounded-2xl border gold-border">
                 <h3 class="text-2xl font-bold accent-text mb-4">活動紀錄影像服務</h3>
-                <p class="text-gray-400 mb-6">熟悉公部門拍攝需求，提供平面與動態雙紀錄。</p>
+                <p class="text-gray-400 mb-6 font-light">提供公部門與企業高品質的活動紀錄，包含平面攝影與短影音動態紀錄。</p>
                 
                 <h4 class="accent-text font-bold mb-4">📷 活動平面攝影作品</h4>
                 <div class="grid grid-cols-2 gap-3 mb-6">
-                    <img src="DSC00068.jpg" class="gallery-img">
-                    <img src="DSC00069.jpg" class="gallery-img">
-                    <img src="DSC01169.jpg" class="gallery-img">
+                    <img src="/DSC00068.jpg" class="gallery-img" alt="活動攝影1">
+                    <img src="/DSC00069.jpg" class="gallery-img" alt="活動攝影2">
+                    <img src="/DSC01169.jpg" class="gallery-img" alt="活動攝影3">
                     <div class="bg-white/5 gallery-img flex items-center justify-center text-xs text-gray-600">MORE</div>
                 </div>
                 <a href="https://drive.google.com/drive/folders/1MCgYwM6XIotRy--mduFCHQRFaUH9vEYW" target="_blank" class="block w-full py-3 bg-[#D4A574]/10 border border-[#D4A574] text-center rounded-lg hover:bg-[#D4A574]/20 transition">查看更多雲端作品</a>
             </div>
 
-            <div class="bg-[#111] p-8 rounded-2xl border gold-border">
-                <h3 class="text-2xl font-bold accent-text mb-4">短影音內容製作</h3>
-                <p class="text-gray-400 mb-6">不只是流量影片，是能被理解的內容。</p>
-                <ul class="space-y-3 mb-8 text-gray-300">
-                    <li>▸ 專業內容說明</li>
-                    <li>▸ 教學與知識型內容</li>
-                    <li>▸ 人物品牌定位</li>
-                </ul>
+            <div class="bg-[#111] p-8 rounded-2xl border gold-border flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold accent-text mb-4">短影音內容製作</h3>
+                    <p class="text-gray-400 mb-6 font-light">不只是拍影片，更是透過精準企劃，讓專業知識轉化為好懂的社群內容。</p>
+                    <ul class="space-y-4 mb-8 text-gray-300">
+                        <li class="flex items-center gap-2 font-light"><span class="accent-text">▸</span> 專業內容說明與轉化</li>
+                        <li class="flex items-center gap-2 font-light"><span class="accent-text">▸</span> 知識型 IP 品牌定位</li>
+                        <li class="flex items-center gap-2 font-light"><span class="accent-text">▸</span> 高轉換短影音廣告</li>
+                    </ul>
+                </div>
                 <div class="space-y-3">
                     <a href="https://youtube.com/shorts/yluitL_0Xt8" target="_blank" class="block p-4 bg-white/5 rounded-lg hover:translate-x-2 transition border border-white/10">專業型內容展示 →</a>
                     <a href="https://youtube.com/shorts/YiEu8fYL4-g" target="_blank" class="block p-4 bg-white/5 rounded-lg hover:translate-x-2 transition border border-white/10">轉換導向內容展示 →</a>
@@ -87,48 +88,43 @@
             <h2 class="text-3xl font-bold text-center mb-16 accent-text tracking-widest">實際流量數據證明</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="text-center group">
-                    <img src="data1.PNG" class="gallery-img mb-4 mx-auto border-2 border-[#D4A574]/40 group-hover:border-[#D4A574]">
-                    <p class="text-lg font-bold accent-text">1.3M+</p>
-                    <p class="text-xs text-gray-500">自然流量證明</p>
+                    <img src="/data1.PNG" class="gallery-img mb-4 mx-auto border-2 border-[#D4A574]/40 group-hover:border-[#D4A574]">
+                    <p class="text-lg font-bold accent-text uppercase">1.3M+</p>
+                    <p class="text-xs text-gray-500 mt-1">自然流量證明</p>
                 </div>
                 <div class="text-center group">
-                    <img src="data2.JPG" class="gallery-img mb-4 mx-auto border-2 border-[#D4A574]/40 group-hover:border-[#D4A574]">
-                    <p class="text-lg font-bold accent-text">879K+</p>
-                    <p class="text-xs text-gray-500">Reels 洞察報告</p>
+                    <img src="/data2.JPG" class="gallery-img mb-4 mx-auto border-2 border-[#D4A574]/40 group-hover:border-[#D4A574]">
+                    <p class="text-lg font-bold accent-text uppercase">879K+</p>
+                    <p class="text-xs text-gray-500 mt-1">單支 Reels 數據</p>
                 </div>
                 <div class="text-center group">
-                    <img src="data3.JPG" class="gallery-img mb-4 mx-auto border-2 border-[#D4A574]/40 group-hover:border-[#D4A574]">
-                    <p class="text-lg font-bold accent-text">4.1M+</p>
-                    <p class="text-xs text-gray-500">90天總瀏覽</p>
+                    <img src="/data3.JPG" class="gallery-img mb-4 mx-auto border-2 border-[#D4A574]/40 group-hover:border-[#D4A574]">
+                    <p class="text-lg font-bold accent-text uppercase">4.1M+</p>
+                    <p class="text-xs text-gray-500 mt-1">90天總瀏覽量</p>
                 </div>
                 <div class="text-center group">
-                    <img src="data4.JPG" class="gallery-img mb-4 mx-auto border-2 border-[#D4A574]/40 group-hover:border-[#D4A574]">
+                    <img src="/data4.JPG" class="gallery-img mb-4 mx-auto border-2 border-[#D4A574]/40 group-hover:border-[#D4A574]">
                     <p class="text-lg font-bold accent-text">穩定成長</p>
-                    <p class="text-xs text-gray-500">多支影片流量</p>
+                    <p class="text-xs text-gray-500 mt-1">多支影片流量</p>
                 </div>
-            </div>
-            <div class="mt-16 text-center">
-                <a href="https://drive.google.com/drive/folders/1DBhamSlHH-TUOkcNDJ3KAD2JMimIVWvX" target="_blank" class="inline-block px-8 py-4 border-2 border-[#D4A574] accent-text font-bold rounded-full hover:bg-[#D4A574] hover:text-black transition">查看完整數據截圖</a>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-white/10">
-        <p class="accent-text text-xl font-bold mb-4 tracking-widest">光宙數位創意</p>
-        <p class="text-gray-500 text-sm">© 2026 Chiawei Weng. All Rights Reserved.</p>
+    <footer class="py-20 text-center border-t border-white/10 bg-black">
+        <p class="accent-text text-xl font-bold mb-4 tracking-widest uppercase">光宙數位創意</p>
+        <p class="text-gray-500 text-sm font-light uppercase tracking-tighter">© 2026 Chiawei Weng. All Rights Reserved.</p>
     </footer>
 
     <script>
         window.addEventListener('scroll', function() {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                nav.classList.add('nav-scrolled');
-                nav.classList.add('py-3');
+                nav.classList.add('nav-scrolled', 'py-3');
                 nav.classList.remove('py-5');
             } else {
-                nav.classList.remove('nav-scrolled');
+                nav.classList.remove('nav-scrolled', 'py-3');
                 nav.classList.add('py-5');
-                nav.classList.remove('py-3');
             }
         });
     </script>
